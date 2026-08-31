@@ -4,225 +4,998 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Methods & Tags Documentation</title>
+    <title>Complete HTML Documentation</title>
 </head>
 
 <body>
-    <h1>
-        <b>HTML METHODS & TAGS DOCUMENTATION</b>
-    </h1>
+
+    <h1>COMPLETE HTML DOCUMENTATION</h1>
+    <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages.</p>
+    <hr>
+
+    <!-- NAVIGATION TABLE OF CONTENTS -->
+    <nav>
+        <h2>TABLE OF CONTENTS</h2>
+        <ol>
+            <li><a href="#structure">Document Structure &amp; Doctype</a></li>
+            <li><a href="#metadata">Head &amp; Metadata Tags</a></li>
+            <li><a href="#text">Text &amp; Formatting Tags</a></li>
+            <li><a href="#links">Links, Images &amp; Media</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms &amp; Input Methods</a></li>
+            <li><a href="#semantic">Semantic Layout Tags</a></li>
+            <li><a href="#iframe">Iframes &amp; Embedding</a></li>
+            <li><a href="#escapes">HTML Entities (Special Characters)</a></li>
+            <li><a href="#comments">Comments</a></li>
+        </ol>
+    </nav>
     <hr>
 
     <!-- ========================================== -->
-    <!-- SECTION 1: Form Method Attribute           -->
+    <!-- 1. DOCUMENT STRUCTURE & DOCTYPE            -->
     <!-- ========================================== -->
-    <h2>1. FORM METHOD ATTRIBUTE</h2>
-    <p>
-        The <b>method</b> attribute specifies how form data is sent to the server.
-        It has two main values: <b>GET</b> and <b>POST</b>.
-    </p>
-
-    <h3>GET Method</h3>
-    <p>
-        Appends form data to the URL as name/value pairs. Used for non-sensitive data
-        like search queries. Data is visible in the address bar.
-    </p>
-    <pre>&lt;form action="/search" method="GET"&gt;
-    &lt;input type="text" name="query"&gt;
-    &lt;button type="submit"&gt;Search&lt;/button&gt;
-&lt;/form&gt;</pre>
-
-    <h3>POST Method</h3>
-    <p>
-        Sends form data in the request body. Used for sensitive data like passwords,
-        logins, or file uploads. Data is not visible in the address bar and has no size limit.
-    </p>
-    <pre>&lt;form action="/login" method="POST"&gt;
-    &lt;input type="text" name="username"&gt;
-    &lt;input type="password" name="password"&gt;
-    &lt;button type="submit"&gt;Login&lt;/button&gt;
-&lt;/form&gt;</pre>
-
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Method</th>
-            <th>Data Location</th>
-            <th>Visible in URL</th>
-            <th>Security</th>
-        </tr>
-        <tr>
-            <td>GET</td>
-            <td>Query string</td>
-            <td>Yes</td>
-            <td>Low</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>Request body</td>
-            <td>No</td>
-            <td>High</td>
-        </tr>
-    </table>
+    <section id="structure">
+        <h2>1. DOCUMENT STRUCTURE &amp; DOCTYPE</h2>
+        <p>
+            Every HTML document starts with a <b>doctype declaration</b> which tells the browser
+            which version of HTML is being used. The HTML5 doctype is:
+        </p>
+        <pre>&lt;!DOCTYPE html&gt;</pre>
+        <p>The basic skeleton of an HTML page:</p>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Content goes here
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;!DOCTYPE html&gt;</td>
+                <td>Declares HTML5 version</td>
+            </tr>
+            <tr>
+                <td>&lt;html&gt;</td>
+                <td>Root element of the page; <b>lang</b> attribute sets language</td>
+            </tr>
+            <tr>
+                <td>&lt;head&gt;</td>
+                <td>Contains metadata, not visible to users</td>
+            </tr>
+            <tr>
+                <td>&lt;body&gt;</td>
+                <td>Contains all visible content</td>
+            </tr>
+        </table>
+        <p>
+            <b>&lt;html&gt;</b> is a container for all other HTML elements.
+            The <b>lang</b> attribute (e.g. <i>lang="en"</i>) declares the document language
+            for accessibility and search engines.
+        </p>
+    </section>
     <hr>
 
     <!-- ========================================== -->
-    <!-- SECTION 2: Inline & Text Tags              -->
+    <!-- 2. HEAD & METADATA TAGS                    -->
     <!-- ========================================== -->
-    <h2>2. TEXT FORMATTING TAGS</h2>
+    <section id="metadata">
+        <h2>2. HEAD &amp; METADATA TAGS</h2>
+        <p>The <b>&lt;head&gt;</b> element contains information about the document. It is never displayed.</p>
 
-    <h3>&lt;p&gt; - Paragraph</h3>
-    <p>Defines a paragraph of text. Block-level element.</p>
-    <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+        <h3>&lt;meta&gt;</h3>
+        <p>Provides metadata about the page. Common uses:</p>
+        <pre>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Page description for SEO"&gt;
+&lt;meta name="keywords" content="html, css, web"&gt;
+&lt;meta name="author" content="Ayush Nandi"&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>charset</td>
+                <td>Character encoding (usually UTF-8)</td>
+            </tr>
+            <tr>
+                <td>name="viewport"</td>
+                <td>Controls layout on mobile devices</td>
+            </tr>
+            <tr>
+                <td>name="description"</td>
+                <td>Shown in search engine results</td>
+            </tr>
+            <tr>
+                <td>name="keywords"</td>
+                <td>Relevant search keywords</td>
+            </tr>
+            <tr>
+                <td>name="author"</td>
+                <td>Page author name</td>
+            </tr>
+        </table>
 
-    <h3>&lt;br&gt; - Line Break</h3>
-    <p>Inserts a single line break. Void element (no closing tag).</p>
-    <pre>Line one&lt;br&gt;Line two</pre>
+        <h3>&lt;title&gt;</h3>
+        <p>Defines the tab title shown in the browser.</p>
+        <pre>&lt;title&gt;My Website&lt;/title&gt;</pre>
 
-    <h3>&lt;b&gt; vs &lt;strong&gt;</h3>
-    <p>
-        <b>&lt;b&gt;</b> makes text bold (visual only). <br>
-        <b>&lt;strong&gt;</b> indicates important text (semantic).
-    </p>
-    <pre>&lt;b&gt;Bold text&lt;/b&gt;
-&lt;strong&gt;Important text&lt;/strong&gt;</pre>
+        <h3>&lt;link&gt;</h3>
+        <p>Links external resources like CSS stylesheets.</p>
+        <pre>&lt;link rel="stylesheet" href="style.css"&gt;</pre>
 
-    <h3>&lt;i&gt; vs &lt;em&gt;</h3>
-    <p>
-        <i>&lt;i&gt;</i> makes text italic (visual only). <br>
-        <i>&lt;em&gt;</i> emphasizes text (semantic).
-    </p>
-    <pre>&lt;i&gt;Italic text&lt;/i&gt;
-&lt;em&gt;Emphasized text&lt;/em&gt;</pre>
+        <h3>&lt;base&gt;</h3>
+        <p>Sets a base URL for all relative links in the document.</p>
+        <pre>&lt;base href="https://example.com/"&gt;</pre>
+    </section>
+    <hr>
 
-    <h3>&lt;u&gt; - Underline</h3>
-    <p><u>Underlines the text.</u></p>
-    <pre>&lt;u&gt;Underlined text&lt;/u&gt;</pre>
+    <!-- ========================================== -->
+    <!-- 3. TEXT & FORMATTING TAGS                  -->
+    <!-- ========================================== -->
+    <section id="text">
+        <h2>3. TEXT &amp; FORMATTING TAGS</h2>
 
-    <h3>&lt;s&gt; - Strikethrough</h3>
-    <p><s>Shows text with a line through it.</s></p>
-    <pre>&lt;s&gt;Struck text&lt;/s&gt;</pre>
+        <h3>Heading Tags (h1 - h6)</h3>
+        <p>Define headings. <b>h1</b> is the largest/most important, <b>h6</b> the smallest.</p>
+        <pre>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</pre>
+        <p>
+            Result:
+        </p>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
 
-    <h3>&lt;sup&gt; &amp; &lt;sub&gt;</h3>
-    <p>
-        <b>&lt;sup&gt;</b> - Superscript: x<sup>2</sup> <br>
-        <b>&lt;sub&gt;</b> - Subscript: H<sub>2</sub>O
-    </p>
-    <pre>(a+b)&lt;sup&gt;2&lt;/sup&gt;
-H&lt;sub&gt;2&lt;/sub&gt;O</pre>
+        <h3>Paragraph &amp; Line Breaks</h3>
+        <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;br&gt; &lt;!-- line break --&gt;
+&lt;hr&gt; &lt;!-- horizontal rule --&gt;</pre>
+        <p>
+            <b>&lt;p&gt;</b> defines a paragraph. <b>&lt;br&gt;</b> inserts a line break (void tag).
+            <b>&lt;hr&gt;</b> draws a horizontal line to separate content.
+        </p>
 
-    <h3>&lt;pre&gt; - Preformatted Text</h3>
-    <p>Preserves spaces, tabs, and line breaks exactly as typed.</p>
-    <pre>&lt;pre&gt;
-This    text
-keeps   spacing
+        <h3>Text Styling Tags</h3>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>&lt;b&gt;</td>
+                <td>Bold text (visual)</td>
+                <td><b>Bold</b></td>
+            </tr>
+            <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Important text (semantic)</td>
+                <td><strong>Strong</strong></td>
+            </tr>
+            <tr>
+                <td>&lt;i&gt;</td>
+                <td>Italic text (visual)</td>
+                <td><i>Italic</i></td>
+            </tr>
+            <tr>
+                <td>&lt;em&gt;</td>
+                <td>Emphasized text (semantic)</td>
+                <td><em>Emphasis</em></td>
+            </tr>
+            <tr>
+                <td>&lt;u&gt;</td>
+                <td>Underline</td>
+                <td><u>Underline</u></td>
+            </tr>
+            <tr>
+                <td>&lt;s&gt;</td>
+                <td>Strikethrough</td>
+                <td><s>Struck</s></td>
+            </tr>
+            <tr>
+                <td>&lt;mark&gt;</td>
+                <td>Highlighted text</td>
+                <td><mark>Marked</mark></td>
+            </tr>
+            <tr>
+                <td>&lt;small&gt;</td>
+                <td>Fine/small print</td>
+                <td><small>Small</small></td>
+            </tr>
+            <tr>
+                <td>&lt;del&gt;</td>
+                <td>Deleted text</td>
+                <td><del>Deleted</del></td>
+            </tr>
+            <tr>
+                <td>&lt;ins&gt;</td>
+                <td>Inserted text</td>
+                <td><ins>Inserted</ins></td>
+            </tr>
+            <tr>
+                <td>&lt;sup&gt;</td>
+                <td>Superscript (power)</td>
+                <td>x<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>&lt;sub&gt;</td>
+                <td>Subscript (chemical)</td>
+                <td>H<sub>2</sub>O</td>
+            </tr>
+            <tr>
+                <td>&lt;code&gt;</td>
+                <td>Code snippet</td>
+                <td><code>var x = 5;</code></td>
+            </tr>
+            <tr>
+                <td>&lt;blockquote&gt;</td>
+                <td>Long quotation</td>
+                <td><blockquote>Quote text</blockquote></td>
+            </tr>
+        </table>
+
+        <h3>&lt;pre&gt; - Preformatted Text</h3>
+        <p>Preserves whitespace, tabs and line breaks exactly as written in the code.</p>
+        <pre>&lt;pre&gt;
+    This    spacing
+    is   preserved
 &lt;/pre&gt;</pre>
+    </section>
     <hr>
 
     <!-- ========================================== -->
-    <!-- SECTION 3: Anchor Tag Attributes           -->
+    <!-- 4. LINKS, IMAGES & MEDIA                   -->
     <!-- ========================================== -->
-    <h2>3. ANCHOR TAG ATTRIBUTES</h2>
+    <section id="links">
+        <h2>4. LINKS, IMAGES &amp; MEDIA</h2>
 
-    <h3>href</h3>
-    <p>Specifies the destination URL.</p>
-    <pre>&lt;a href="https://example.com"&gt;Visit Site&lt;/a&gt;</pre>
+        <h3>&lt;a&gt; - Anchor (Hyperlink)</h3>
+        <p>The anchor tag creates hyperlinks.</p>
+        <pre>&lt;a href="https://example.com" target="_blank" title="Tooltip"&gt;Link Text&lt;/a&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>href</td>
+                <td>Destination URL or #id for internal links</td>
+            </tr>
+            <tr>
+                <td>target</td>
+                <td>Where to open: _blank, _self, _parent, _top</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>Tooltip shown on hover</td>
+            </tr>
+        </table>
+        <ul>
+            <li><b>_blank</b> - new tab/window</li>
+            <li><b>_self</b> - same frame (default)</li>
+            <li><b>_parent</b> - parent frame</li>
+            <li><b>_top</b> - full body of window</li>
+        </ul>
+        <p>Internal jump links use <b>#id</b>:</p>
+        <pre>&lt;a href="#contact"&gt;Go to Contact&lt;/a&gt;
 
-    <h3>target</h3>
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Value</th>
-            <th>Behavior</th>
-        </tr>
-        <tr>
-            <td>_blank</td>
-            <td>Opens in a new tab/window</td>
-        </tr>
-        <tr>
-            <td>_self</td>
-            <td>Opens in same frame (default)</td>
-        </tr>
-        <tr>
-            <td>_parent</td>
-            <td>Opens in parent frame</td>
-        </tr>
-        <tr>
-            <td>_top</td>
-            <td>Opens in full body of window</td>
-        </tr>
-    </table>
-    <pre>&lt;a href="page.html" target="_blank"&gt;New tab&lt;/a&gt;</pre>
+&lt;section id="contact"&gt;...&lt;/section&gt;</pre>
 
-    <h3>title</h3>
-    <p>Shows a tooltip when hovering over the link.</p>
-    <pre>&lt;a href="page.html" title="Go to page"&gt;Hover me&lt;/a&gt;</pre>
-    <hr>
+        <h3>&lt;img&gt; - Image</h3>
+        <p>Embeds an image. It is a <b>void element</b> (self-closing).</p>
+        <pre>&lt;img src="images/photo.jpg" alt="Description" width="300" height="200"&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td>Image file path or Base64 data URI</td>
+            </tr>
+            <tr>
+                <td>alt</td>
+                <td>Fallback text (accessibility &amp; if image fails)</td>
+            </tr>
+            <tr>
+                <td>width / height</td>
+                <td>Display dimensions (px)</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>Tooltip on hover</td>
+            </tr>
+        </table>
 
-    <!-- ========================================== -->
-    <!-- SECTION 4: Media Tags                      -->
-    <!-- ========================================== -->
-    <h2>4. MEDIA TAGS</h2>
-
-    <h3>&lt;img&gt;</h3>
-    <p>Embeds an image. Uses <b>src</b> for source and <b>alt</b> for fallback text.</p>
-    <pre>&lt;img src="images/photo.jpg" alt="My Photo" height="300"&gt;</pre>
-
-    <h3>&lt;video&gt;</h3>
-    <p>Embeds a video with playback controls.</p>
-    <pre>&lt;video height="300" controls loop muted&gt;
+        <h3>&lt;video&gt; - Video</h3>
+        <pre>&lt;video width="400" controls autoplay loop muted&gt;
     &lt;source src="assets/video.mp4" type="video/mp4"&gt;
-    Browser does not support video.
+    Your browser does not support video.
 &lt;/video&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>controls</td>
+                <td>Show play/pause controls</td>
+            </tr>
+            <tr>
+                <td>autoplay</td>
+                <td>Auto starts playing</td>
+            </tr>
+            <tr>
+                <td>loop</td>
+                <td>Repeats video</td>
+            </tr>
+            <tr>
+                <td>muted</td>
+                <td>Starts muted</td>
+            </tr>
+            <tr>
+                <td>poster</td>
+                <td>Preview image before play</td>
+            </tr>
+        </table>
+
+        <h3>&lt;audio&gt; - Audio</h3>
+        <pre>&lt;audio controls&gt;
+    &lt;source src="audio/song.mp3" type="audio/mpeg"&gt;
+    Browser does not support audio.
+&lt;/audio&gt;</pre>
+    </section>
     <hr>
 
     <!-- ========================================== -->
-    <!-- SECTION 5: Semantic Layout Tags            -->
+    <!-- 5. LISTS                                  -->
     <!-- ========================================== -->
-    <h2>5. SEMANTIC LAYOUT TAGS</h2>
+    <section id="lists">
+        <h2>5. LISTS</h2>
 
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Tag</th>
-            <th>Purpose</th>
-        </tr>
-        <tr>
-            <td>&lt;header&gt;</td>
-            <td>Introductory content / site title</td>
-        </tr>
-        <tr>
-            <td>&lt;nav&gt;</td>
-            <td>Navigation links container</td>
-        </tr>
-        <tr>
-            <td>&lt;main&gt;</td>
-            <td>Dominant content (only one per page)</td>
-        </tr>
-        <tr>
-            <td>&lt;section&gt;</td>
-            <td>Standalone section with a heading</td>
-        </tr>
-        <tr>
-            <td>&lt;article&gt;</td>
-            <td>Self-contained reusable content</td>
-        </tr>
-        <tr>
-            <td>&lt;aside&gt;</td>
-            <td>Indirectly related content / sidebar</td>
-        </tr>
-        <tr>
-            <td>&lt;footer&gt;</td>
-            <td>Footer for author info, copyright</td>
-        </tr>
-    </table>
+        <h3>Unordered List (&lt;ul&gt;)</h3>
+        <p>Bullet-point list. Each item uses &lt;li&gt;.</p>
+        <pre>&lt;ul&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
 
-    <pre>&lt;header&gt;Title&lt;/header&gt;
-&lt;nav&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/nav&gt;
+        <h3>Ordered List (&lt;ol&gt;)</h3>
+        <p>Numbered list. Use the <b>type</b> attribute to change numbering style.</p>
+        <pre>&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+        </ol>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Type Value</th>
+                <th>Style</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Numbers (default)</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>Uppercase letters</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>Lowercase letters</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>Uppercase roman numerals</td>
+            </tr>
+            <tr>
+                <td>i</td>
+                <td>Lowercase roman numerals</td>
+            </tr>
+        </table>
+        <pre>&lt;ol type="A"&gt;...&lt;/ol&gt;</pre>
+
+        <h3>Description List (&lt;dl&gt;)</h3>
+        <p>Pairs a term (&lt;dt&gt;) with a description (&lt;dd&gt;).</p>
+        <pre>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+        </dl>
+
+        <h3>Nested Lists</h3>
+        <pre>&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apple&lt;/li&gt;
+            &lt;li&gt;Mango&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 6. TABLES                                 -->
+    <!-- ========================================== -->
+    <section id="tables">
+        <h2>6. TABLES</h2>
+        <p>Tables organize data into rows and columns.</p>
+        <pre>&lt;table border="1" cellpadding="5"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ayush&lt;/td&gt;
+            &lt;td&gt;20&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ayush</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Tag</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Table container</td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>Table row</td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>Header cell (bold, centered)</td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>Data cell</td>
+            </tr>
+            <tr>
+                <td>&lt;thead&gt;</td>
+                <td>Header group</td>
+            </tr>
+            <tr>
+                <td>&lt;tbody&gt;</td>
+                <td>Body group</td>
+            </tr>
+            <tr>
+                <td>&lt;tfoot&gt;</td>
+                <td>Footer group</td>
+            </tr>
+            <tr>
+                <td>&lt;caption&gt;</td>
+                <td>Table title</td>
+            </tr>
+        </table>
+        <p>Merge cells using <b>colspan</b> (horizontal) and <b>rowspan</b> (vertical):</p>
+        <pre>&lt;td colspan="2"&gt;Spans two columns&lt;/td&gt;
+&lt;td rowspan="2"&gt;Spans two rows&lt;/td&gt;</pre>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 7. FORMS & INPUT METHODS                   -->
+    <!-- ========================================== -->
+    <section id="forms">
+        <h2>7. FORMS &amp; INPUT METHODS</h2>
+        <p>
+            The <b>&lt;form&gt;</b> tag collects user input. The <b>method</b> attribute
+            determines how data is submitted.
+        </p>
+        <pre>&lt;form action="/submit" method="POST"&gt;
+    ...
+&lt;/form&gt;</pre>
+
+        <h3>Method Attribute</h3>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Method</th>
+                <th>Data Location</th>
+                <th>Visible in URL</th>
+                <th>Best For</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Query string</td>
+                <td>Yes</td>
+                <td>Searches, filters, bookmarks</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Request body</td>
+                <td>No</td>
+                <td>Logins, uploads, sensitive data</td>
+            </tr>
+        </table>
+
+        <h3>&lt;input&gt; Types</h3>
+        <pre>&lt;input type="text" name="username" placeholder="Enter name"&gt;
+&lt;input type="password" name="pass"&gt;
+&lt;input type="email" name="email"&gt;
+&lt;input type="number" name="age" min="1" max="100"&gt;
+&lt;input type="date" name="dob"&gt;
+&lt;input type="checkbox" name="agree"&gt;
+&lt;input type="radio" name="gender" value="male"&gt;
+&lt;input type="file" name="avatar"&gt;
+&lt;input type="color" name="color"&gt;
+&lt;input type="range" name="vol" min="0" max="100"&gt;
+&lt;input type="submit" value="Send"&gt;
+&lt;input type="reset" value="Clear"&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Type</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Single-line text input</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>Masked text (dots)</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>Validates email format</td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td>Numeric input with min/max</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>Date picker</td>
+            </tr>
+            <tr>
+                <td>checkbox</td>
+                <td>Multi-select toggle</td>
+            </tr>
+            <tr>
+                <td>radio</td>
+                <td>Single-select from group</td>
+            </tr>
+            <tr>
+                <td>file</td>
+                <td>File upload</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color picker</td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td>Slider control</td>
+            </tr>
+            <tr>
+                <td>submit</td>
+                <td>Submit button</td>
+            </tr>
+            <tr>
+                <td>reset</td>
+                <td>Clears the form</td>
+            </tr>
+        </table>
+
+        <h3>&lt;button&gt;</h3>
+        <pre>&lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;button type="reset"&gt;Reset&lt;/button&gt;
+&lt;button type="button" onclick="alert('Hi')"&gt;Click Me&lt;/button&gt;</pre>
+
+        <h3>&lt;select&gt; &amp; &lt;option&gt;</h3>
+        <p>Dropdown menu.</p>
+        <pre>&lt;select name="country"&gt;
+    &lt;option value="india"&gt;India&lt;/option&gt;
+    &lt;option value="usa"&gt;USA&lt;/option&gt;
+&lt;/select&gt;</pre>
+
+        <h3>&lt;textarea&gt;</h3>
+        <p>Multi-line text input.</p>
+        <pre>&lt;textarea name="message" rows="4" cols="30"&gt;Default text&lt;/textarea&gt;</pre>
+
+        <h3>&lt;label&gt;</h3>
+        <p>Associates a text label with a form control using the <b>for</b> attribute.</p>
+        <pre>&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name" name="name"&gt;</pre>
+
+        <h3>&lt;fieldset&gt; &amp; &lt;legend&gt;</h3>
+        <p>Groups related form fields with a title.</p>
+        <pre>&lt;fieldset&gt;
+    &lt;legend&gt;Personal Info&lt;/legend&gt;
+    ...
+&lt;/fieldset&gt;</pre>
+
+        <h3>Form Attributes</h3>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>action</td>
+                <td>URL where data is sent</td>
+            </tr>
+            <tr>
+                <td>method</td>
+                <td>GET or POST</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>Form name for scripting</td>
+            </tr>
+            <tr>
+                <td>autocomplete</td>
+                <td>on/off browser autofill</td>
+            </tr>
+            <tr>
+                <td>enctype</td>
+                <td>Encoding (needed for file upload)</td>
+            </tr>
+            <tr>
+                <td>target</td>
+                <td>Where to open the response</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 8. SEMANTIC LAYOUT TAGS                    -->
+    <!-- ========================================== -->
+    <section id="semantic">
+        <h2>8. SEMANTIC LAYOUT TAGS</h2>
+        <p>Semantic tags describe the meaning of content, improving accessibility and SEO.</p>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Tag</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>&lt;header&gt;</td>
+                <td>Introductory content / site title at top</td>
+            </tr>
+            <tr>
+                <td>&lt;nav&gt;</td>
+                <td>Navigation links container</td>
+            </tr>
+            <tr>
+                <td>&lt;main&gt;</td>
+                <td>Primary content (only one per page)</td>
+            </tr>
+            <tr>
+                <td>&lt;section&gt;</td>
+                <td>Thematic grouping with a heading</td>
+            </tr>
+            <tr>
+                <td>&lt;article&gt;</td>
+                <td>Self-contained, reusable content</td>
+            </tr>
+            <tr>
+                <td>&lt;aside&gt;</td>
+                <td>Sidebar / indirectly related content</td>
+            </tr>
+            <tr>
+                <td>&lt;footer&gt;</td>
+                <td>Footer: author, copyright, links</td>
+            </tr>
+            <tr>
+                <td>&lt;figure&gt;</td>
+                <td>Self-contained media with caption</td>
+            </tr>
+            <tr>
+                <td>&lt;figcaption&gt;</td>
+                <td>Caption for a &lt;figure&gt;</td>
+            </tr>
+            <tr>
+                <td>&lt;details&gt;</td>
+                <td>Collapsible content</td>
+            </tr>
+            <tr>
+                <td>&lt;summary&gt;</td>
+                <td>Visible heading of &lt;details&gt;</td>
+            </tr>
+        </table>
+        <pre>&lt;header&gt;
+    &lt;h1&gt;Site Title&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt; |
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
 &lt;main&gt;
     &lt;section id="home"&gt;
         &lt;h2&gt;Home&lt;/h2&gt;
-        &lt;p&gt;Main content.&lt;/p&gt;
+        &lt;article&gt;
+            &lt;h3&gt;Article Title&lt;/h3&gt;
+            &lt;p&gt;Article content.&lt;/p&gt;
+        &lt;/article&gt;
     &lt;/section&gt;
 &lt;/main&gt;
-&lt;footer&gt;&amp;copy; 2026 AYUSH&lt;/footer&gt;</pre>
+
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2026 AYUSH NANDI&lt;/p&gt;
+&lt;/footer&gt;</pre>
+
+        <h3>Generic Containers</h3>
+        <p>
+            <b>&lt;div&gt;</b> is a generic block-level container, and
+            <b>&lt;span&gt;</b> is a generic inline container. Both are used with CSS classes/id.
+        </p>
+        <pre>&lt;div class="box"&gt;Block content&lt;/div&gt;
+&lt;p&gt;Text with a &lt;span class="highlight"&gt;highlighted&lt;/span&gt; word.&lt;/p&gt;</pre>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 9. IFRAMES & EMBEDDING                     -->
+    <!-- ========================================== -->
+    <section id="iframe">
+        <h2>9. IFRAMES &amp; EMBEDDING</h2>
+
+        <h3>&lt;iframe&gt;</h3>
+        <p>Embeds another HTML document inside the current page.</p>
+        <pre>&lt;iframe src="page.html" width="600" height="400"&gt;
+    Fallback text
+&lt;/iframe&gt;</pre>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>src</td>
+                <td>URL of the embedded page</td>
+            </tr>
+            <tr>
+                <td>width / height</td>
+                <td>Frame dimensions</td>
+            </tr>
+            <tr>
+                <td>frameborder</td>
+                <td>Show/hide border</td>
+            </tr>
+            <tr>
+                <td>loading</td>
+                <td>lazy / eager loading</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 10. HTML ENTITIES (SPECIAL CHARACTERS)     -->
+    <!-- ========================================== -->
+    <section id="escapes">
+        <h2>10. HTML ENTITIES (SPECIAL CHARACTERS)</h2>
+        <p>
+            Certain characters must be encoded using named or numeric entities so the browser
+            renders them correctly instead of interpreting them as HTML code.
+        </p>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Character</th>
+                <th>Entity Name</th>
+                <th>Entity Number</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>&amp;lt;</td>
+                <td>&amp;#60;</td>
+                <td>Less than</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>&amp;gt;</td>
+                <td>&amp;#62;</td>
+                <td>Greater than</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>&amp;amp;</td>
+                <td>&amp;#38;</td>
+                <td>Ampersand</td>
+            </tr>
+            <tr>
+                <td>&quot;</td>
+                <td>&amp;quot;</td>
+                <td>&amp;#34;</td>
+                <td>Double quote</td>
+            </tr>
+            <tr>
+                <td>&apos;</td>
+                <td>&amp;apos;</td>
+                <td>&amp;#39;</td>
+                <td>Single quote</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&amp;nbsp;</td>
+                <td>&amp;#160;</td>
+                <td>Non-breaking space</td>
+            </tr>
+            <tr>
+                <td>&copy;</td>
+                <td>&amp;copy;</td>
+                <td>&amp;#169;</td>
+                <td>Copyright symbol</td>
+            </tr>
+            <tr>
+                <td>&reg;</td>
+                <td>&amp;reg;</td>
+                <td>&amp;#174;</td>
+                <td>Registered trademark</td>
+            </tr>
+            <tr>
+                <td>&trade;</td>
+                <td>&amp;trade;</td>
+                <td>&amp;#8482;</td>
+                <td>Trademark</td>
+            </tr>
+            <tr>
+                <td>&euro;</td>
+                <td>&amp;euro;</td>
+                <td>&amp;#8364;</td>
+                <td>Euro currency</td>
+            </tr>
+            <tr>
+                <td>&pound;</td>
+                <td>&amp;pound;</td>
+                <td>&amp;#163;</td>
+                <td>Pound currency</td>
+            </tr>
+            <tr>
+                <td>&larr;</td>
+                <td>&amp;larr;</td>
+                <td>&amp;#8592;</td>
+                <td>Left arrow</td>
+            </tr>
+            <tr>
+                <td>&rarr;</td>
+                <td>&amp;rarr;</td>
+                <td>&amp;#8594;</td>
+                <td>Right arrow</td>
+            </tr>
+            <tr>
+                <td>&hearts;</td>
+                <td>&amp;hearts;</td>
+                <td>&amp;#9829;</td>
+                <td>Heart symbol</td>
+            </tr>
+            <tr>
+                <td>&diams;</td>
+                <td>&amp;diams;</td>
+                <td>&amp;#9830;</td>
+                <td>Diamond symbol</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- 11. COMMENTS                              -->
+    <!-- ========================================== -->
+    <section id="comments">
+        <h2>11. HTML COMMENTS</h2>
+        <p>Comments are notes in the code that are not displayed in the browser.</p>
+        <pre>&lt;!-- This is a single-line comment --&gt;
+
+&lt;!--
+    This is a
+    multi-line comment
+--&gt;</pre>
+        <p>Comments are useful for explaining sections of code to other developers.</p>
+    </section>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SUMMARY TABLE                             -->
+    <!-- ========================================== -->
+    <section id="summary">
+        <h2>HTML TAG SUMMARY</h2>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Category</th>
+                <th>Tags</th>
+            </tr>
+            <tr>
+                <td>Structure</td>
+                <td>&lt;html&gt;, &lt;head&gt;, &lt;body&gt;</td>
+            </tr>
+            <tr>
+                <td>Metadata</td>
+                <td>&lt;title&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;base&gt;, &lt;style&gt;</td>
+            </tr>
+            <tr>
+                <td>Headings</td>
+                <td>&lt;h1&gt; - &lt;h6&gt;</td>
+            </tr>
+            <tr>
+                <td>Text</td>
+                <td>&lt;p&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;pre&gt;, &lt;blockquote&gt;, &lt;code&gt;</td>
+            </tr>
+            <tr>
+                <td>Formatting</td>
+                <td>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;s&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;mark&gt;, &lt;small&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;del&gt;, &lt;ins&gt;</td>
+            </tr>
+            <tr>
+                <td>Links</td>
+                <td>&lt;a&gt;</td>
+            </tr>
+            <tr>
+                <td>Media</td>
+                <td>&lt;img&gt;, &lt;video&gt;, &lt;audio&gt;, &lt;source&gt;, &lt;picture&gt;, &lt;iframe&gt;</td>
+            </tr>
+            <tr>
+                <td>Lists</td>
+                <td>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</td>
+            </tr>
+            <tr>
+                <td>Tables</td>
+                <td>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, &lt;caption&gt;</td>
+            </tr>
+            <tr>
+                <td>Forms</td>
+                <td>&lt;form&gt;, &lt;input&gt;, &lt;button&gt;, &lt;select&gt;, &lt;option&gt;, &lt;textarea&gt;, &lt;label&gt;, &lt;fieldset&gt;, &lt;legend&gt;</td>
+            </tr>
+            <tr>
+                <td>Semantic</td>
+                <td>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;figure&gt;, &lt;figcaption&gt;, &lt;details&gt;, &lt;summary&gt;</td>
+            </tr>
+            <tr>
+                <td>Generic</td>
+                <td>&lt;div&gt;, &lt;span&gt;</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
 
     <footer>
         <p>&copy; 2026 AYUSH NANDI. All rights reserved.</p>
