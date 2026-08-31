@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Methods & Tags Documentation</title>
+</head>
+
+<body>
+    <h1>
+        <b>HTML METHODS & TAGS DOCUMENTATION</b>
+    </h1>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SECTION 1: Form Method Attribute           -->
+    <!-- ========================================== -->
+    <h2>1. FORM METHOD ATTRIBUTE</h2>
+    <p>
+        The <b>method</b> attribute specifies how form data is sent to the server.
+        It has two main values: <b>GET</b> and <b>POST</b>.
+    </p>
+
+    <h3>GET Method</h3>
+    <p>
+        Appends form data to the URL as name/value pairs. Used for non-sensitive data
+        like search queries. Data is visible in the address bar.
+    </p>
+    <pre>&lt;form action="/search" method="GET"&gt;
+    &lt;input type="text" name="query"&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</pre>
+
+    <h3>POST Method</h3>
+    <p>
+        Sends form data in the request body. Used for sensitive data like passwords,
+        logins, or file uploads. Data is not visible in the address bar and has no size limit.
+    </p>
+    <pre>&lt;form action="/login" method="POST"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+    &lt;button type="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;</pre>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Method</th>
+            <th>Data Location</th>
+            <th>Visible in URL</th>
+            <th>Security</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>Query string</td>
+            <td>Yes</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>Request body</td>
+            <td>No</td>
+            <td>High</td>
+        </tr>
+    </table>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: Inline & Text Tags              -->
+    <!-- ========================================== -->
+    <h2>2. TEXT FORMATTING TAGS</h2>
+
+    <h3>&lt;p&gt; - Paragraph</h3>
+    <p>Defines a paragraph of text. Block-level element.</p>
+    <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+
+    <h3>&lt;br&gt; - Line Break</h3>
+    <p>Inserts a single line break. Void element (no closing tag).</p>
+    <pre>Line one&lt;br&gt;Line two</pre>
+
+    <h3>&lt;b&gt; vs &lt;strong&gt;</h3>
+    <p>
+        <b>&lt;b&gt;</b> makes text bold (visual only). <br>
+        <b>&lt;strong&gt;</b> indicates important text (semantic).
+    </p>
+    <pre>&lt;b&gt;Bold text&lt;/b&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;</pre>
+
+    <h3>&lt;i&gt; vs &lt;em&gt;</h3>
+    <p>
+        <i>&lt;i&gt;</i> makes text italic (visual only). <br>
+        <i>&lt;em&gt;</i> emphasizes text (semantic).
+    </p>
+    <pre>&lt;i&gt;Italic text&lt;/i&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;</pre>
+
+    <h3>&lt;u&gt; - Underline</h3>
+    <p><u>Underlines the text.</u></p>
+    <pre>&lt;u&gt;Underlined text&lt;/u&gt;</pre>
+
+    <h3>&lt;s&gt; - Strikethrough</h3>
+    <p><s>Shows text with a line through it.</s></p>
+    <pre>&lt;s&gt;Struck text&lt;/s&gt;</pre>
+
+    <h3>&lt;sup&gt; &amp; &lt;sub&gt;</h3>
+    <p>
+        <b>&lt;sup&gt;</b> - Superscript: x<sup>2</sup> <br>
+        <b>&lt;sub&gt;</b> - Subscript: H<sub>2</sub>O
+    </p>
+    <pre>(a+b)&lt;sup&gt;2&lt;/sup&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O</pre>
+
+    <h3>&lt;pre&gt; - Preformatted Text</h3>
+    <p>Preserves spaces, tabs, and line breaks exactly as typed.</p>
+    <pre>&lt;pre&gt;
+This    text
+keeps   spacing
+&lt;/pre&gt;</pre>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: Anchor Tag Attributes           -->
+    <!-- ========================================== -->
+    <h2>3. ANCHOR TAG ATTRIBUTES</h2>
+
+    <h3>href</h3>
+    <p>Specifies the destination URL.</p>
+    <pre>&lt;a href="https://example.com"&gt;Visit Site&lt;/a&gt;</pre>
+
+    <h3>target</h3>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Value</th>
+            <th>Behavior</th>
+        </tr>
+        <tr>
+            <td>_blank</td>
+            <td>Opens in a new tab/window</td>
+        </tr>
+        <tr>
+            <td>_self</td>
+            <td>Opens in same frame (default)</td>
+        </tr>
+        <tr>
+            <td>_parent</td>
+            <td>Opens in parent frame</td>
+        </tr>
+        <tr>
+            <td>_top</td>
+            <td>Opens in full body of window</td>
+        </tr>
+    </table>
+    <pre>&lt;a href="page.html" target="_blank"&gt;New tab&lt;/a&gt;</pre>
+
+    <h3>title</h3>
+    <p>Shows a tooltip when hovering over the link.</p>
+    <pre>&lt;a href="page.html" title="Go to page"&gt;Hover me&lt;/a&gt;</pre>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: Media Tags                      -->
+    <!-- ========================================== -->
+    <h2>4. MEDIA TAGS</h2>
+
+    <h3>&lt;img&gt;</h3>
+    <p>Embeds an image. Uses <b>src</b> for source and <b>alt</b> for fallback text.</p>
+    <pre>&lt;img src="images/photo.jpg" alt="My Photo" height="300"&gt;</pre>
+
+    <h3>&lt;video&gt;</h3>
+    <p>Embeds a video with playback controls.</p>
+    <pre>&lt;video height="300" controls loop muted&gt;
+    &lt;source src="assets/video.mp4" type="video/mp4"&gt;
+    Browser does not support video.
+&lt;/video&gt;</pre>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: Semantic Layout Tags            -->
+    <!-- ========================================== -->
+    <h2>5. SEMANTIC LAYOUT TAGS</h2>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Tag</th>
+            <th>Purpose</th>
+        </tr>
+        <tr>
+            <td>&lt;header&gt;</td>
+            <td>Introductory content / site title</td>
+        </tr>
+        <tr>
+            <td>&lt;nav&gt;</td>
+            <td>Navigation links container</td>
+        </tr>
+        <tr>
+            <td>&lt;main&gt;</td>
+            <td>Dominant content (only one per page)</td>
+        </tr>
+        <tr>
+            <td>&lt;section&gt;</td>
+            <td>Standalone section with a heading</td>
+        </tr>
+        <tr>
+            <td>&lt;article&gt;</td>
+            <td>Self-contained reusable content</td>
+        </tr>
+        <tr>
+            <td>&lt;aside&gt;</td>
+            <td>Indirectly related content / sidebar</td>
+        </tr>
+        <tr>
+            <td>&lt;footer&gt;</td>
+            <td>Footer for author info, copyright</td>
+        </tr>
+    </table>
+
+    <pre>&lt;header&gt;Title&lt;/header&gt;
+&lt;nav&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/nav&gt;
+&lt;main&gt;
+    &lt;section id="home"&gt;
+        &lt;h2&gt;Home&lt;/h2&gt;
+        &lt;p&gt;Main content.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;&amp;copy; 2026 AYUSH&lt;/footer&gt;</pre>
+
+    <footer>
+        <p>&copy; 2026 AYUSH NANDI. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
