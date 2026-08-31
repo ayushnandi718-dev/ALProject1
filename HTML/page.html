@@ -2,51 +2,94 @@
 <html lang="en">
 
 <head>
+    <!-- Metadata specifying character encoding and mobile viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Semantic HTML Layout</title>
 </head>
 
 <body>
-    <header>THIS IS HEADER</header>
+    <!-- ========================================== -->
+    <!-- HEADER: Introductory content / site title  -->
+    <!-- ========================================== -->
+    <header>
+        <h1>THIS IS HEADER</h1>
+    </header>
     <hr>
+
+    <!-- ========================================== -->
+    <!-- NAV: Navigation links container            -->
+    <!-- Internal jump links use #id of the target  -->
+    <!-- ========================================== -->
     <nav>
-        <a href="#home">Home</a> <br>
-        <a href="#contact">Contact</a> <br>
-        <a href="#about">About</a> <br>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#contact">Contact</a>
     </nav>
     <hr>
+
+    <!-- ========================================== -->
+    <!-- MAIN: Dominant content of the document body-->
+    <!-- There should only be one <main> per page   -->
+    <!-- ========================================== -->
     <main>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nobis aliquid sunt.
         </p>
         <hr>
-        <section>HOME</section>
-        <section>CONTACT</section>
-        <section>ABOUT</section>
-        <hr>
-        <section>
-            <article id="home">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
-                voluptate incidunt vel, at possimus harum temporibus distinctio qui
-                sed ipsam dignissimos optio repudiandae aliquam inventore. Soluta neque modi minima porro!
+
+        <!-- ========================================== -->
+        <!-- SECTION & ARTICLE: Groupings of content    -->
+        <!-- <section>: Standalone section with heading -->
+        <!-- <article>: Self-contained reusable content -->
+        <!-- ========================================== -->
+        <section id="home">
+            <h2>HOME</h2>
+            <article>
+                <h3>Welcome Article</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+                    voluptate incidunt vel, at possimus harum temporibus distinctio qui
+                    sed ipsam dignissimos optio repudiandae aliquam inventore. Soluta neque modi minima porro!
+                </p>
             </article>
         </section>
         <hr>
-        <aside>
+
+        <section id="about">
+            <h2>ABOUT</h2>
+            <p>This is the about section describing the creator or website purpose.</p>
+        </section>
+        <hr>
+
+        <!-- ========================================== -->
+        <!-- ASIDE: Indirectly related content/sidebar  -->
+        <!-- ========================================== -->
+        <aside id="projects">
             <h3>PROJECTS</h3>
             <ul>
-                <li>PORFOLIO</li>
+                <li>PORTFOLIO</li>
                 <li>WEB APP</li>
             </ul>
         </aside>
+        <hr>
 
-
-
-        <footer>©️AYUSH NANDI</footer>
-
-
+        <section id="contact">
+            <h2>CONTACT</h2>
+            <p>Get in touch via email or portfolio link.</p>
+        </section>
     </main>
+    <hr>
+
+    <!-- ========================================== -->
+    <!-- FOOTER: Footer for author info, copyright  -->
+    <!-- Typically placed as a direct child of body -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2026 AYUSH NANDI. All rights reserved.</p>
+    </footer>
+
 </body>
 
 </html>
